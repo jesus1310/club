@@ -37,4 +37,26 @@ public class Club
     {
         return miembros.size();
     }
+
+    /** 
+     * Calcula el numero de socios que se dieron de alta en un mes determinado. 
+     * El año no nos importa. En caso de que el parametro contenga un valor 
+     * no valido se muestra por pantalla el error.
+     * @param month El mes en el que estamos interesados
+     * @return El numero de socios que se dieron de alta dicho mes
+     */
+    public int joinedMonth(int month){
+        int sociosEnMesDado = 0;
+        if(month < 1 || month > 12) {
+            System.out.println("El mes introducido no es válido, debe estar en el rango [1,12]");
+        }
+        else {
+            for (Membership miembro : miembros){
+                if (miembro.getMonth() == month){
+                    sociosEnMesDado = sociosEnMesDado + 1;
+                } 
+            }
+        }
+        return sociosEnMesDado;
+    }
 }
