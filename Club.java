@@ -74,10 +74,12 @@ public class Club
             System.out.println("El mes introducido no es válido, debe estar en el rango [1,12]");
         }
         else {
-            for (Membership miembro : miembros){
-                if ((miembro.getMonth() == month) && (miembro.getYear() == year)){
+            for (int indice = 0; indice < miembros.size()-1;){
+                Membership miembro = miembros.get(indice);
+                if (miembro.getMonth() == month && miembro.getYear() == year){
                     sociosEliminados.add(miembro);
-                } 
+                    miembros.remove(miembro);
+                }
             }
         }
         return sociosEliminados;
