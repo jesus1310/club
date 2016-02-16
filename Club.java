@@ -59,4 +59,27 @@ public class Club
         }
         return sociosEnMesDado;
     }
+
+    /** 
+     * Todos los socios que se han dado de alta un determinado mes de un determinado año se
+     * dan de baja. En caso de que el parametro month contenga un valor no valido se muestra 
+     * por pantalla el error.
+     * @param month El mes en el que estamos interesados
+     * @param year El año en el que estamos interesados
+     * @return Una coleccion con los socios que se han dado de baja del club
+     */
+    public ArrayList<Membership> purge(int month,int year){
+        ArrayList<Membership> sociosEliminados = new ArrayList<>();
+        if(month < 1 || month > 12) {
+            System.out.println("El mes introducido no es válido, debe estar en el rango [1,12]");
+        }
+        else {
+            for (Membership miembro : miembros){
+                if ((miembro.getMonth() == month) && (miembro.getYear() == year)){
+                    sociosEliminados.add(miembro);
+                } 
+            }
+        }
+        return sociosEliminados;
+    }
 }

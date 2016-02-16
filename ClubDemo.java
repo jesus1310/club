@@ -1,4 +1,3 @@
-
 /**
  * Provide a demonstration of the Club and Membership
  * classes.
@@ -25,13 +24,12 @@ public class ClubDemo
      * Further example calls could be added if more functionality
      * is added to the Club class.
      */
-    public int demo()
+    public void demo()
     {
         club.join(new Membership("David", 2, 2004));
         club.join(new Membership("Michael", 1, 2004));
         System.out.println("The club has " +
                            club.numberOfMembers() +
                            " members.");
-        return club.joinedMonth(1);
     }
 }
